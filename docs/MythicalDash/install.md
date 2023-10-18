@@ -92,8 +92,8 @@ You will need a database setup and a user with the correct permissions created f
 ```sql
 mysql -u root -p
 CREATE USER 'mythicaldash'@'127.0.0.1' IDENTIFIED BY 'yourPassword';
-CREATE DATABASE dash;
-GRANT ALL PRIVILEGES ON dash.* TO 'mythicaldash'@'127.0.0.1' WITH GRANT OPTION;
+CREATE DATABASE mythicaldash;
+GRANT ALL PRIVILEGES ON mythicaldash.* TO 'mythicaldash'@'127.0.0.1' WITH GRANT OPTION;
 exit
 ```
 
