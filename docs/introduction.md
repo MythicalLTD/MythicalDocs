@@ -11,3 +11,4 @@ Welcome to the enchanting realm where magic begins! Since our inception in 2021,
 Get started by selecting one of our **project**.
 
 [MythicalDash](/docs/mythicaldash/intro)
+[MythicalPics](/docs/mythicalpics/intro)
