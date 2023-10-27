@@ -75,7 +75,7 @@ The first step in this process is to create the folder where the dashboard will 
 mkdir -p /var/www/mythicaldash
 cd /var/www/mythicaldash
 curl -Lo MythicalDash.zip https://github.com/mythicalltd/mythicaldash/releases/latest/download/MythicalDash.zip
-unzip MythicalDash.zip -o -d /var/www/mythicaldash
+unzip -o MythicalDash.zip -d /var/www/mythicaldash
 ```
 Once it is downloaded you'll need to unpack the archive and then set the correct permissions on the core/ and tmp/ directories. These directories allow us to store files as well as keep a speedy cache available to reduce load times.
 ```bash
