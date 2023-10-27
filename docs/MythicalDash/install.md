@@ -72,17 +72,19 @@ curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/loca
 ## Download Files
 The first step in this process is to create the folder where the dashboard will live and then move ourselves into that newly created folder. Below is an example of how to perform this operation.
 ```bash
-cd /var/www
-git clone https://github.com/mythicalltd/mythicaldash.git client
+mkdir -p /var/www/mythicaldash
+cd /var/www/mythicaldash
+curl -Lo MythicalDash.zip https://github.com/mythicalltd/mythicaldash/releases/latest/download/MythicalDash.zip
+unzip MythicalDash.zip -o -d /var/www/mythicaldash
 ```
 Once it is downloaded you'll need to unpack the archive and then set the correct permissions on the core/ and tmp/ directories. These directories allow us to store files as well as keep a speedy cache available to reduce load times.
 ```bash
-chown -R www-data:www-data /var/www/client/*
+chown -R www-data:www-data /var/www/mythicaldash/*
 ```
 ## Composer 
 After you've downloaded all of the files you will need to upgrade the core components of the client. To do this, simply run the commands below and follow any prompts.
 ```bash
-cd /var/www/client
+cd /var/www/mythicaldash
 composer install --no-dev --optimize-autoloader
 ```
 ## Installation
@@ -101,14 +103,14 @@ exit
 MythicalDash's core environment is easily configured using a few different CLI commands built into the app. This step will cover setting up things such as settings and database credentials.
 ```bash
 # Run this for our small checkup that we need to run for the cli to run
-cd /var/www/client
+cd /var/www/mythicaldash
 bash arch.bash
 chmod +x ./MythicalDash
-./MythicalDash -generate-config # Generate a custom config file
-./MythicalDash -key-generate # Reset the encryption key
-./MythicalDash -config-database # Setup the database connection
-./MythicalDash -migrate-database-now # Migrate the database
-./MythicalDash -config-setup # Start a custom setup for the dash
+./MythicalDash -environment:newconfig # Generate a custom config file
+./MythicalDash -key:generate # Reset the encryption key
+./MythicalDash -environment:database # Setup the database connection
+./MythicalDash -migrate # Migrate the database
+./MythicalDash -environment:setup # Start a custom setup for the dash
 ```
 
 ## Crontab Configuration
@@ -116,5 +118,5 @@ Setting up cron jobs will be really important; this is not an optional step: the
 ```bash
 sudo crontab -e
 # Paste this in the first line
-* * * * * php /var/www/client/crons/server.php >> /dev/null 2>&1
+* * * * * php /var/www/mythicaldash/crons/server.php >> /dev/null 2>&1
 ```

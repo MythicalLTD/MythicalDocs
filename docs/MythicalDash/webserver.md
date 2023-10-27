@@ -22,11 +22,11 @@ server {
     listen 443 ssl http2;
     server_name <domain>;
 
-    root /var/www/client/public;
+    root /var/www/mythicaldash/public;
     index index.php;
 
-    access_log /var/log/nginx/mythicaldash.app-access.log;
-    error_log  /var/log/nginx/mythicaldash.app-error.log error;
+    access_log /var/www/mythicaldash/logs/mythicaldash.app-access.log;
+    error_log  /var/www/mythicaldash/logs/mythicaldash.app-error.log error;
 
     # allow larger file uploads and longer script runtimes
     client_max_body_size 100m;
