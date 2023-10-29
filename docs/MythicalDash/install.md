@@ -35,7 +35,7 @@ apt update
 # Add universe repository if you are on Ubuntu 18.04
 apt-add-repository universe
 # Install Dependencies
-apt -y install php8.2 php8.2-{common,cli,gd,mysql,mbstring,bcmath,xml,fpm,curl,zip} mariadb-server nginx tar unzip zip git redis-server
+apt -y install php8.2 php8.2-{common,cli,gd,mysql,mbstring,bcmath,xml,fpm,curl,zip} mariadb-server nginx tar unzip zip git redis-server dos2unix
 ```
 
 ## Dependency Installation (Debian)
@@ -60,7 +60,7 @@ apt install -y php8.2 php8.2-{common,cli,gd,mysql,mbstring,bcmath,xml,fpm,curl,z
 curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash
 
 # Install the rest of dependencies
-apt install -y mariadb-server nginx tar unzip git redis-server zip
+apt install -y mariadb-server nginx tar unzip git redis-server zip dos2unix
 ```
 
 ## Installing Composer
@@ -104,6 +104,7 @@ MythicalDash's core environment is easily configured using a few different CLI c
 ```bash
 # Run this for our small checkup that we need to run for the cli to run
 cd /var/www/mythicaldash
+dos2unix arch.bash
 bash arch.bash
 chmod +x ./MythicalDash
 ./MythicalDash -environment:newconfig # Generate a custom config file
