@@ -6,6 +6,13 @@ sidebar_position: 2
 MythicalDash is designed to run on your own web server. You will need to have root access to your server in order to run and use this panel.
 You are expected to understand how to read documentation to use this client area. We have spent many hours detailing how to install or upgrade our software; take some time and read rather than copy and pasting and then complaining when things do not work. 
 
+# READ THIS
+MythicalDash does not support any type of migration from other client area!
+So please do not install it on your panel if you have more than 5 users due to panel desync!
+Also, please do not modify any data from inside the panel due to the dash not being able to sync with the panel!
+Every change you want to make, please make it from inside the dash!
+
+
 ## Picking a Server OS
 MythicalDash runs on a small range of operating systems, so pick whichever you are most comfortable using.
 
