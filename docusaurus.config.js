@@ -98,7 +98,7 @@ const config = {
             items: [
               {
                 label: 'MythicalDash',
-                to: '/docs/mythicaldash',
+                to: '/docs/mythicaldash/intro',
               },
             ],
           },
