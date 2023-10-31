@@ -18,6 +18,7 @@ The first step in the update process is to download the new client files from Gi
 cd /var/www/mythicaldash
 curl -Lo MythicalDash.zip https://github.com/mythicalltd/mythicaldash/releases/latest/download/MythicalDash.zip
 unzip -o MythicalDash.zip -d /var/www/mythicaldash
+dos2unix arch.bash
 sudo bash arch.bash
 rm /var/www/mythicaldash/public/FIRST_USER # Remove this
 ```
