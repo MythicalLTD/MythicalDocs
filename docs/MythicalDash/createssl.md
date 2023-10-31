@@ -11,6 +11,18 @@ sudo apt install -y certbot
 sudo apt install -y python3-certbot-nginx
 ```
 
+### Run this on your server if you use oracle cloud
+```bash
+sudo iptables -P INPUT ACCEPT
+sudo iptables -P FORWARD ACCEPT
+sudo iptables -P OUTPUT ACCEPT
+sudo iptables -t nat -F
+sudo iptables -t mangle -F
+sudo iptables -F
+sudo iptables -X
+iptables-save > /etc/iptables/rules.v4
+```
+
 ### Creating a Certificate
 After installing the certbot, we need to generate a certificate. There are a couple of ways to do that, but the easiest is to use the web server-specific certbot plugin you just installed. For Wings-only machines that don't need a web server, use the standalone or DNS method of the certbot as you don't need a web server for it.
 
