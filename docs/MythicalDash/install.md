@@ -120,7 +120,23 @@ chmod +x ./MythicalDash
 ./MythicalDash -migrate # Migrate the database
 ./MythicalDash -environment:setup # Start a custom setup for the dash
 ```
-
+## Adding MythicalDash CLI to path
+MythicalDash's cli is a tool you can use to manage your dash. This step is not `required` but it is very, very useful sometimes, so you won't have to go to the directory path itself, and we recommend doing those extra steps!
+```
+# Use the command 'cd' to go to the user home directory!
+cd
+# Edit the environment configuration file
+nano .bashrc
+# Add this to the bottom of the file
+alias mythicaldash='/var/www/mythicaldash/MythicalDash'
+alias mythicaldash='/var/www/mythicaldash/MythicalDash'
+```
+After that, you need to restart your server to have them inside your path!
+Or if you are lazy, just copy and paste this into your terminal!
+```
+alias mythicaldash='/var/www/mythicaldash/MythicalDash'
+alias mythicaldash='/var/www/mythicaldash/MythicalDash'
+```
 ## Crontab Configuration
 Setting up cron jobs will be really important; this is not an optional step: the cron jobs will allow the dashboard to process data internally, and manage the queue system. First, check if crontab is installed by typing "crontab -e" in your terminal. Or, if you are using a hosting service, check if your host supports crontab. If you are on a terminal, run:
 ```bash
