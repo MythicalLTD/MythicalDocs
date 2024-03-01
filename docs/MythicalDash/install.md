@@ -94,6 +94,16 @@ After you've downloaded all of the files you will need to upgrade the core compo
 cd /var/www/mythicaldash
 composer install --no-dev --optimize-autoloader
 ```
+## Fixing MariaDB
+Since mariadb added a stupid ass setting in the latest version you have to switch the mariadb uft to the default one!
+```bash
+sudo sed -i '/^#collation-server/a collation-server = utf8mb4_general_ci' /etc/mysql/mariadb.conf.d/50-server.cnf
+sudo sed -i '/^character-set-server/s/^/#/g' /etc/mysql/mariadb.conf.d/50-server.cnf 
+sudo sed -i '/^#character-set-server/a character-set-server = utf8mb4' /etc/mysql/mariadb.conf.d/50-server.cnf
+
+sudo sed -i '/^character-set-collations/s/^/#/g' /etc/mysql/mariadb.conf.d/50-server.cnf 
+sudo sed -i '/^#character-set-collations/a character-set-collations = utf8mb4' /etc/mysql/mariadb.conf.d/50-server.cnf
+```
 ## Installation
 Now that all of the files have been downloaded we need to configure some core aspects of the Dashboard.
 You will need a database setup and a user with the correct permissions created for that database before continuing any further.
