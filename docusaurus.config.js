@@ -11,7 +11,7 @@ const config = {
   favicon: 'https://avatars.githubusercontent.com/u/117385445',
 
   // Set the production url of your site here
-  url: 'https://docs.mythicalsystems.me',
+  url: 'https://docs.mythicalsystems.xyz',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -71,7 +71,7 @@ const config = {
         },
         items: [
           {
-            to: 'https://mythicalsystems.me',
+            to: 'https://mythicalsystems.xyz',
             activeBasePath: 'docs',
             label: 'Home Page',
             position: 'left',
@@ -124,7 +124,7 @@ const config = {
               },
               {
                 label: 'Status',
-                href: 'https://status.mythicalsystems.me',
+                href: 'https://status.mythicalsystems.xyz',
               },
               {
                 label: 'Company houses',
